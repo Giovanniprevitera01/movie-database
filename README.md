@@ -86,18 +86,21 @@ A comprehensive SQL-based relational database project for managing a movie colle
    cd movie-database
    
 2. Import the database schema:
+    ```bash
 mysql -u your_mysql_user -p < schema.sql
 
 3. Populate the database with sample data:
+   ```bash
 mysql -u your_mysql_user -p < insert_data.sql
 
 4. Run predefined queries from queries.sql or interact with the database using your preferred SQL client (like MySQL Workbench, DBeaver, or CLI).
+   
 ---
 
 ## 📖 Example Operations
 
 Here are some key SQL operations included in the project:
-# 🔍 Advanced Search
+### 🔍 Advanced Search
 
 Find movies based on actor, genre, or director:
 
@@ -105,36 +108,36 @@ Find movies based on actor, genre, or director:
 SET @genere_tipo = 'Thriller';
 CALL search_movies();
 
-# ➕ Insert a New Movie
+### ➕ Insert a New Movie
 
 INSERT INTO FILM (id_film, id_regista, durata, valutazione, titolo, anno_pubblicazione)
 VALUES (1100, 100, '02:40:00', 9.0, 'Interstellar', 2014);
 
-# 🎶 Create a Playlist
+### 🎶 Create a Playlist
 
 INSERT INTO PLAYLIST (id_playlist, id_utente, nome, descrizione, n_contenuti)
 VALUES (90, 2, 'Christmas Favorites', 'Movies to watch during Christmas', 0);
 
-# ⭐ Add a Review
+### ⭐ Add a Review
 
 INSERT INTO RECENSIONE (id_utente, id_film, valutazione, commento)
 VALUES (3, 100, 9, 'A truly emotional masterpiece.');
 
-# 🗑️ Delete a User
+### 🗑️ Delete a User
 
 DELETE FROM UTENTE WHERE id_utente = 1;
 
 ## ⚡ Triggers
-# 🛑 1. Limit User Playlists
+### 🛑 1. Limit User Playlists
 
 Prevents users from creating more than 20 playlists.
-# 🔄 2. Auto-Increment Playlist Contents
+### 🔄 2. Auto-Increment Playlist Contents
 
 Automatically updates the number of contents in a playlist after adding a movie.
-# ⭐ 3. Auto-Update Movie Ratings
+### ⭐ 3. Auto-Update Movie Ratings
 
 Recalculates and updates the average rating of a movie whenever a new review is added.
-# 🚫 4. Prevent Duplicate Movies in Playlists
+### 🚫 4. Prevent Duplicate Movies in Playlists
 
 
 
