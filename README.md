@@ -58,7 +58,7 @@ A comprehensive SQL-based relational database project for managing a movie colle
 - **TRAILER** – Movie trailers  
 - **FILM_UTENTI** – Movies watched by users  
 
-📷 *You can add an ER diagram screenshot here for better visualization.*
+![ER Diagram](assets/er_diagram.png)
 
 ---
 
@@ -68,13 +68,14 @@ A comprehensive SQL-based relational database project for managing a movie colle
   <a href="https://www.mysql.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="50" height="50" style="border-radius:50%; border:2px solid black; padding:4px; background:white;">
   </a>
-  <a href="https://ubuntu.com/" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" alt="Ubuntu" width="50" height="50" style="border-radius:50%; border:2px solid black; padding:4px; background:white;">
-  </a>
   <a href="https://git-scm.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="50" height="50" style="border-radius:50%; border:2px solid black; padding:4px; background:white;">
   </a>
+  <a href="https://ubuntu.com/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" alt="Ubuntu" width="50" height="50" style="border-radius:50%; border:2px solid black; padding:4px; background:white;">
+  </a>
 </p>
+
 
 ---
 
@@ -87,19 +88,19 @@ A comprehensive SQL-based relational database project for managing a movie colle
    
 2. Import the database schema:
     ```bash
-mysql -u your_mysql_user -p < schema.sql
+    mysql -u your_mysql_user -p < schema.sql
 
 3. Populate the database with sample data:
    ```bash
-mysql -u your_mysql_user -p < insert_data.sql
+   mysql -u your_mysql_user -p < insert_data.sql
 
 4. Run predefined queries from queries.sql or interact with the database using your preferred SQL client (like MySQL Workbench, DBeaver, or CLI).
    
 ---
 
 ## 📖 Example Operations
-
 Here are some key SQL operations included in the project:
+
 ### 🔍 Advanced Search
 
 Find movies based on actor, genre, or director:
