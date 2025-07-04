@@ -10,18 +10,18 @@ A comprehensive SQL-based relational database project for managing a movie colle
 
 ## 📑 Table of Contents
 
-- [Features](#-features)
-- [Database Schema](#-database-schema)
-- [Tech Stack](#-tech-stack)
-- [Setup & Installation](#-setup--installation)
-- [Example Operations](#-example-operations)
-- [Triggers](#-triggers)
-- [Author](#-author)
-- [License](#-license)
+- [🎯 Features](#-features)
+- [🗺️ Database Schema](#-database-schema)
+- [🛠 Tech Stack](#-tech-stack)
+- [⚙️ Setup & Installation](#️-setup--installation)
+- [📖 Example Operations](#-example-operations)
+- [⚡ Triggers](#-triggers)
+- [👤 Author](#-author)
+- [📜 License](#-license)
 
 ---
 
-## 🚀 Features
+## 🎯 Features
 
 ✅ Relational database for managing:
 - Users and their playlists  
@@ -45,32 +45,33 @@ A comprehensive SQL-based relational database project for managing a movie colle
 
 📌 The database `Collezione_film` contains 11 interconnected tables:  
 
-- `UTENTE` – User information  
-- `REGISTA` – Directors  
-- `FILM` – Movies  
-- `RECENSIONE` – Reviews  
-- `PLAYLIST` – User playlists  
-- `FILM_PLAYLIST` – Movies in playlists  
-- `GENERE` – Genres  
-- `GENERE_APPARTENENZA` – Movie-genre relations  
-- `ATTORE` – Actors  
-- `ATTORI_FILM` – Actor-movie relations  
-- `TRAILER` – Movie trailers  
+- **UTENTE** – User information  
+- **REGISTA** – Directors  
+- **FILM** – Movies  
+- **RECENSIONE** – Reviews  
+- **PLAYLIST** – User playlists  
+- **FILM_PLAYLIST** – Movies in playlists  
+- **GENERE** – Genres  
+- **GENERE_APPARTENENZA** – Movie-genre relations  
+- **ATTORE** – Actors  
+- **ATTORI_FILM** – Actor-movie relations  
+- **TRAILER** – Movie trailers  
+- **FILM_UTENTI** – Movies watched by users  
 
-You can find the ER Diagram in [`ER_diagram.png`](ER_diagram.png).  
+📷 *You can add an ER diagram screenshot here for better visualization.*
 
 ---
 
 ## 🛠 Tech Stack
 
 <p align="center">
-  <a href="https://www.mysql.com/">
+  <a href="https://www.mysql.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="50" height="50" style="border-radius:50%; border:2px solid black; padding:4px; background:white;">
   </a>
-  <a href="https://ubuntu.com/">
+  <a href="https://ubuntu.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg" alt="Ubuntu" width="50" height="50" style="border-radius:50%; border:2px solid black; padding:4px; background:white;">
   </a>
-  <a href="https://git-scm.com/">
+  <a href="https://git-scm.com/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="50" height="50" style="border-radius:50%; border:2px solid black; padding:4px; background:white;">
   </a>
 </p>
@@ -83,58 +84,77 @@ You can find the ER Diagram in [`ER_diagram.png`](ER_diagram.png).
    ```bash
    git clone https://github.com/<your-username>/movie-database.git
    cd movie-database
+   
+2. Import the database schema:
+mysql -u your_mysql_user -p < schema.sql
 
-    Import database schema:
+3. Populate the database with sample data:
+mysql -u your_mysql_user -p < insert_data.sql
 
-mysql -u your_username -p < schema.sql
+4. Run predefined queries from queries.sql or interact with the database using your preferred SQL client (like MySQL Workbench, DBeaver, or CLI).
+---
 
-Populate tables with sample data:
+## 📖 Example Operations
 
-    mysql -u your_username -p < insert_data.sql
+Here are some key SQL operations included in the project:
+# 🔍 Advanced Search
 
-    Run predefined queries from queries.sql or interact with the database using your preferred SQL client.
+Find movies based on actor, genre, or director:
 
-📝 Example Operations
-🔍 Advanced Search
-
-Search movies based on actor, genre, and director filters:
-
--- Example: Search for Thriller movies
+-- Example: Search for all Thriller movies
 SET @genere_tipo = 'Thriller';
 CALL search_movies();
 
-➕ Add Movie
+# ➕ Insert a New Movie
 
 INSERT INTO FILM (id_film, id_regista, durata, valutazione, titolo, anno_pubblicazione)
 VALUES (1100, 100, '02:40:00', 9.0, 'Interstellar', 2014);
 
-🎶 Create Playlist
+# 🎶 Create a Playlist
 
 INSERT INTO PLAYLIST (id_playlist, id_utente, nome, descrizione, n_contenuti)
 VALUES (90, 2, 'Christmas Favorites', 'Movies to watch during Christmas', 0);
 
-⭐ Add Review
+# ⭐ Add a Review
 
 INSERT INTO RECENSIONE (id_utente, id_film, valutazione, commento)
 VALUES (3, 100, 9, 'A truly emotional masterpiece.');
 
-⚡ Triggers
-🛑 1. Limit User Playlists
+# 🗑️ Delete a User
+
+DELETE FROM UTENTE WHERE id_utente = 1;
+
+## ⚡ Triggers
+# 🛑 1. Limit User Playlists
 
 Prevents users from creating more than 20 playlists.
-🔄 2. Auto-Increment Playlist Contents
+# 🔄 2. Auto-Increment Playlist Contents
 
 Automatically updates the number of contents in a playlist after adding a movie.
-⭐ 3. Auto-Update Movie Ratings
+# ⭐ 3. Auto-Update Movie Ratings
 
 Recalculates and updates the average rating of a movie whenever a new review is added.
-🚫 4. Prevent Duplicate Movies in Playlists
+# 🚫 4. Prevent Duplicate Movies in Playlists
 
-Ensures the same movie isn’t added twice to a playlist.
-👤 Author
 
-    Giovanni Previtera – GitHub Profile
 
-📜 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
