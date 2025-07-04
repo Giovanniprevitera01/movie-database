@@ -58,7 +58,7 @@ A comprehensive SQL-based relational database project for managing a movie colle
 - **TRAILER** – Movie trailers  
 - **FILM_UTENTI** – Movies watched by users  
 
-
+![er_diagram](assets/er_diagram.png)
 
 ---
 
