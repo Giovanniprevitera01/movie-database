@@ -140,6 +140,14 @@ Automatically updates the number of contents in a playlist after adding a movie.
 Recalculates and updates the average rating of a movie whenever a new review is added.
 ### 🚫 4. Prevent Duplicate Movies in Playlists
 
+## 👤 Author
+
+Giovanni Previtera – GitHub Profile
+
+## 📜 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 
 
 
