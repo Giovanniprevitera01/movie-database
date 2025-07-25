@@ -17,7 +17,7 @@ A comprehensive SQL-based relational database project for managing a movie colle
 - [📖 Example Operations](#-example-operations)
 - [⚡ Triggers](#-triggers)
 - [👤 Author](#-author)
-- [📜 License](#-license)
+  
 
 ---
 
@@ -144,9 +144,6 @@ Recalculates and updates the average rating of a movie whenever a new review is 
 
 Giovanni Previtera – GitHub Profile
 
-## 📜 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 
 
